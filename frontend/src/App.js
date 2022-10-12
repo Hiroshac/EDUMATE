@@ -24,8 +24,8 @@ import AddSubjectTimeTable from './components/admin/Time Tables/AddSubjectTimeTa
 import ViewSubjectTimeTable from './components/admin/Time Tables/ViewSubjectTimeTable'
 import AddExamTimeTable from './components/admin/Time Tables/AddExamTimeTable'
 import ViewExamTimeTable from './components/admin/Time Tables/ViewExamTimeTable'
-import UpdateExamTimeTable from './components/admin/Time Tables/UpdateExamTimeTable'
-import UpdateSubjectTable from './components/admin/Time Tables/UpdateSubjectTable'
+import UpdateExamTimeTable  from './components/admin/Time Tables/UpdateExamTimeTable'
+import UpdateSubjectTable  from './components/admin/Time Tables/UpdateSubjectTable'
 import SearchedExam from './components/admin/Time Tables/SearchedExam'
 import { ViewStudentPaper } from './components/client/teacher/ViewStudentPaper'
 import { AuthContext } from './context/AuthContext'
@@ -52,29 +52,29 @@ import { SubjectTimetableDisplay } from './components/client/student/subjecttime
 
 function App() {
   const ProtectedRoute = ({ children }) => {
-    const { user } = useContext(AuthContext)
+    const { user } = useContext(AuthContext);
     if (!user) {
-      return <Navigate to='/login' />
+      return <Navigate to="/login" />;
     }
-    return children
-  }
+    return children;
+  };
   const StudentProtectedRoutes = ({ children }) => {
-    const { user } = useContext(AuthContext)
-    if (user.type != 'Student') {
-      return <Navigate to='/login' />
+    const { user } = useContext(AuthContext);
+    if (user.type != "Student") {
+      return <Navigate to="/login" />;
     }
-    return children
-  }
+    return children;
+  };
   const TeacherProtectedRoutes = ({ children }) => {
-    const { user } = useContext(AuthContext)
-    if (user.type != 'Teacher') {
-      return <Navigate to='/login' />
+    const { user } = useContext(AuthContext);
+    if (user.type != "Teacher") {
+      return <Navigate to="/login" />;
     }
-    return children
-  }
+    return children;
+  };
 
   return (
-    <div className='App'>
+    <div className="App">
       {/* <Navbar /> */}
       {/* <UploadNote/> */}
       <BrowserRouter>
@@ -91,7 +91,7 @@ function App() {
           <Route exact path={'/resetPassword'} element={<ForgetPassword />} />
           <Route
             exact
-            path={'/profile'}
+            path={"/profile"}
             element={
               <ProtectedRoute>
                 <Profile />
@@ -100,7 +100,7 @@ function App() {
           />
           <Route
             exact
-            path={'/updateProfile/:id'}
+            path={"/updateProfile/:id"}
             element={
               <ProtectedRoute>
                 <Update />
@@ -167,7 +167,7 @@ function App() {
           {/* admin */}
           <Route
             exact
-            path={'/adminhome'}
+            path={"/adminhome"}
             element={
               <ProtectedRoute>
                 <AdminHome />
@@ -180,55 +180,31 @@ function App() {
           <Route exact path={'/getsubject'} element={<ViewSubjects />} />
           <Route exact path={'/editstrm/:_id'} element={<UpdateStreams />} />
           <Route exact path={'/addsubtime'} element={<AddSubjectTimeTable />} />
-          <Route
-            exact
-            path={'/getsubtime'}
-            element={<ViewSubjectTimeTable />}
-          />
+          <Route exact path={'/getsubtime'} element={<ViewSubjectTimeTable />} />
           <Route exact path={'/addexam'} element={<AddExamTimeTable />} />
           <Route exact path={'/getexam'} element={<ViewExamTimeTable />} />
-          <Route
-            exact
-            path={'/editexam/:_id'}
-            element={<UpdateExamTimeTable />}
-          />
-          <Route
-            exact
-            path={'/editsubtbl/:_id'}
-            element={<UpdateSubjectTable />}
-          />
+          <Route exact path={'/editexam/:_id'} element={<UpdateExamTimeTable />} />
+          <Route exact path={'/editsubtbl/:_id'} element={<UpdateSubjectTable />} />
           <Route exact path={'/searchexam'} element={<SearchedExam />} />
 
           <Route
             exact
-            path={'editsubj/:_id'}
+            path={"editsubj/:_id"}
             element={<UpdateSubjects />}
           ></Route>
 
           {/* student  */}
           <Route
             exact
-            path={'/studentanswersheetUpload'}
+            path={"/studentanswersheetUpload"}
             element={<StudentAnswersUpload />}
           />
-          <Route exact path={'/examtimetable'} element={<ExamTimeTable />} />
-          <Route exact path={'/subjectnote'} element={<SubjectNote />} />
-          <Route exact path={'/feedback'} element={<FeedBack />} />
-          <Route
-            exact
-            path={'/subjecttimetable'}
-            element={<SubjectTimetableDisplay />}
-          />
-          <Route
-            exact
-            path={'/commentforsubjectnote'}
-            element={<CommentForSubject_Notes />}
-          />
-          <Route
-            exact
-            path={'/displayanswers'}
-            element={<DisplayAnswersheets />}
-          />
+          <Route exact path={"/examtimetable"} element={<ExamTimeTable />} />
+          <Route exact path={"/subjectnote"} element={<SubjectNote />} />
+          <Route exact path={"/feedback"} element={<FeedBack />} />
+          <Route exact path={"/subjecttimetable"} element={<SubjectTimetableDisplay />} />
+          <Route exact path={"/commentforsubjectnote"} element={<CommentForSubject_Notes />} />
+          <Route exact path={"/displayanswers"} element={<DisplayAnswersheets />} />
 
           {/* teacher */}
           <Route exact path='/addlink' element={<UploadLink />} />
@@ -245,7 +221,7 @@ function App() {
         </Routes>
       </BrowserRouter>
     </div>
-  )
+  );
 }
 
 export default App
