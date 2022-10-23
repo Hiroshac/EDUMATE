@@ -331,7 +331,7 @@ function App() {
               </TeacherProtectedRoutes>
             }
           />
-          <Route exact path='/notereport' element={<TeacherProtectedRoutes><NotesReport /></TeacherProtectedRoutes>} />
+          <Route exact path='/notereport' element={<NotesReport/>} />
         </Routes>
       </BrowserRouter>
     </div>

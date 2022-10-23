@@ -63,6 +63,7 @@ export const ViewStudentPaper = () => {
           {note.map((data) => {
             return (
               <>
+                 {(data.status == 'None') ? (
                 <div className='border shadow rounded-3 bg-light'>
                   <form className='mx-5 mt-5 mb-5'>
                     <Card sx={{ minWidth: 275 }}>
@@ -121,6 +122,12 @@ export const ViewStudentPaper = () => {
                     </Card>
                   </form>
                 </div>
+                ):(
+                    <>
+                    <p>No Papers to mark</p>
+                    </>
+                )
+                 }
               </>
             )
           })}

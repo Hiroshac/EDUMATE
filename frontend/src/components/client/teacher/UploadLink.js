@@ -131,7 +131,7 @@ export const UploadLink = () => {
               <div className='mx-5 my-4' style={hr} />
               <div className='mx-5 mt-5 pb-4'>
                 <form>
-                  <select
+                  {/* <select
                     id='stream'
                     name='stream'
                     className='form-control'
@@ -147,9 +147,19 @@ export const UploadLink = () => {
                         </option>
                       )
                     })}
-                  </select>
+                  </select> */}
+                  <input
+                    type='text'
+                    class='form-control'
+                    required
+                    id='formGroupExampleInput'
+                    disabled
+                    value={userStream}
+                    onChange={(e) => {
+                      setSelectedStream(e.target.value)
+                    }}
+                  />
                   <br />
-                  
 
                   <select
                     id='stream'
@@ -184,7 +194,7 @@ export const UploadLink = () => {
                     />
                   </div>
                   <br />
-               
+
                   <div className='form-group'>
                     <select
                       type='number'
@@ -203,7 +213,7 @@ export const UploadLink = () => {
                     </select>
                   </div>
                   <br />
-                  
+
                   <div className='form-group'>
                     <input
                       type='date'
@@ -217,7 +227,7 @@ export const UploadLink = () => {
                     />
                   </div>
                   <br />
-                
+
                   <div className='form-group'>
                     <input
                       type='time'

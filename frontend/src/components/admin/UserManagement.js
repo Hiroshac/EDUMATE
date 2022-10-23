@@ -104,9 +104,9 @@ function UserManagement() {
                 <TableBody>
                   {data
                     .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                    // .filter((fname) =>
-                    //   fname.firstName.toLowerCase().includes(searchItem)
-                    // )
+                    .filter((fname) =>
+                      fname.firstName.toLowerCase().includes(searchItem)
+                    )
                     .map((row) => (
                       <TableRow>
                         <TableCell>{row.firstName}</TableCell>

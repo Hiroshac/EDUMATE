@@ -40,7 +40,7 @@ function AdminNav() {
               <Nav.Link href='/getsubtime'>Manage Time Tables</Nav.Link>
               <Nav.Link href='/getexam'>Manage Exams</Nav.Link>
               <Nav.Link href='/getsubject'>Manage Subjects</Nav.Link>
-              <Nav.Link href='/notereport'>Notes</Nav.Link>
+              <Nav.Link href='/notereport'>Note Report</Nav.Link>
               <NavDropdown title='Details' id='collasible-nav-dropdown'>
                 <NavDropdown.Item href='/viewuser'>User Details</NavDropdown.Item>
               </NavDropdown>

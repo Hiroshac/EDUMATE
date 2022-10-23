@@ -71,7 +71,12 @@ export const NotesReport = () => {
              label:output.map((sub)=>(sub.subject)),
              data:output.map((sub)=>(sub.count)),
              backgroundColor:
-             output.map((sub)=>( 'rgba(255, 99, 132, 0.2)'))  
+             output.map((sub)=>( 'rgb(255, 159, 64)',
+               'rgb(255, 205, 86)',
+               'rgb(75, 192, 192)',
+               'rgb(54, 162, 235)',
+               'rgb(153, 102, 255)',
+               'rgb(201, 203, 207)'))  
               ,
                
              

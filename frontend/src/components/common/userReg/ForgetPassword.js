@@ -9,7 +9,8 @@ function ForgetPassword() {
   const id = localStorage.getItem('userId')
   const navigate = useNavigate()
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault()
     const data = {
       id: id,
       newPassword: password,
@@ -66,47 +67,51 @@ function ForgetPassword() {
               <h1 className='text-center pt-5 pb-3'>
                 <b>Froget Password</b>
               </h1>
-              <h3>Update Password</h3>
-              <div className='form-outline mb-4 pt-2'>
-                <label className='form-label' for='form3Example3'>
-                  New Password
-                </label>
-                <input
-                  type='password'
-                  id='email'
-                  className='form-control form-control-lg'
-                  placeholder='Enter new password'
-                  value={password}
-                  onChange={(e) => {
-                    setPassword(e.target.value)
-                  }}
-                  required
-                />
-              </div>
-              <div className='form-outline mb-3'>
-                <label className='form-label' for='form3Example4'>
-                  Re-enter Password
-                </label>
-                <input
-                  type='password'
-                  id='password'
-                  className='form-control form-control-lg'
-                  placeholder='Re-enter password'
-                  value={rpassword}
-                  onChange={(e) => setRpassword(e.target.value)}
-                  required
-                />
-              </div>
+              <form onSubmit={handleSubmit}>
+                <h3>Update Password</h3>
+                <div className='form-outline mb-4 pt-2'>
+                  <label className='form-label' for='form3Example3'>
+                    New Password
+                  </label>
+                  <input
+                    type='password'
+                    id='email'
+                    className='form-control form-control-lg'
+                    placeholder='Enter new password'
+                    pattern='(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}'
+                    title='Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters'
+                    value={password}
+                    onChange={(e) => {
+                      setPassword(e.target.value)
+                    }}
+                    required
+                  />
+                </div>
+                <div className='form-outline mb-3'>
+                  <label className='form-label' for='form3Example4'>
+                    Re-enter Password
+                  </label>
+                  <input
+                    type='password'
+                    id='password'
+                    className='form-control form-control-lg'
+                    placeholder='Re-enter password'
+                    value={rpassword}
+                    onChange={(e) => setRpassword(e.target.value)}
+                    required
+                  />
+                </div>
 
-              <div className='d-flex justify-content-between align-items-center'>
-                <button
-                  type='submit'
-                  className='btn btn-primary'
-                  onClick={handleSubmit}
-                >
-                  Update Password
-                </button>
-              </div>
+                <div className='d-flex justify-content-between align-items-center'>
+                  <button
+                    type='submit'
+                    className='btn btn-primary'
+                    // onClick={handleSubmit}
+                  >
+                    Update Password
+                  </button>
+                </div>
+              </form>
             </div>
           </div>
         </div>

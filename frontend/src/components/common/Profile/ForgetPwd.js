@@ -12,7 +12,8 @@ function ForgetPwd() {
   const params = useParams()
   const navigate = useNavigate()
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault()
     const data = {
       oldPassword: oldPwd,
       newPassword: newPwd,
@@ -70,57 +71,64 @@ function ForgetPwd() {
 
             <div className='card'>
               <div className='card-body'>
-                <div className='row mb-3'>
-                  <div className='col-sm-3'>
-                    <h6 className='mb-0'>Old Password</h6>
+                <form onSubmit={handleSubmit}>
+                  <div className='row mb-3'>
+                    <div className='col-sm-3'>
+                      <h6 className='mb-0'>Old Password</h6>
+                    </div>
+                    <div class='col-sm-9 text-seconday'>
+                      <input
+                        type='password'
+                        className='form-control'
+                        value={oldPwd}
+                        onChange={(e) => setOldPwd(e.target.value)}
+                        required
+                      />
+                    </div>
                   </div>
-                  <div class='col-sm-9 text-seconday'>
-                    <input
-                      type='password'
-                      className='form-control'
-                      value={oldPwd}
-                      onChange={(e) => setOldPwd(e.target.value)}
-                    />
+                  <div className='row mb-3'>
+                    <div className='col-sm-3'>
+                      <h6 className='mb-0'>New Password</h6>
+                    </div>
+                    <div className='col-sm-9 text-secondary'>
+                      <input
+                        type='password'
+                        className='form-control'
+                        pattern='(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}'
+                        title='Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters'
+                        value={newPwd}
+                        onChange={(e) => setNewPwd(e.target.value)}
+                        required
+                      />
+                    </div>
                   </div>
-                </div>
-                <div className='row mb-3'>
-                  <div className='col-sm-3'>
-                    <h6 className='mb-0'>New Password</h6>
+                  <div className='row mb-3'>
+                    <div className='col-sm-3'>
+                      <h6 className='mb-0'>Re-enter New Password</h6>
+                    </div>
+                    <div className='col-sm-9 text-secondary'>
+                      <input
+                        type='password'
+                        className='form-control'
+                        value={reNewPwd}
+                        onChange={(e) => setReNewPwd(e.target.value)}
+                        required
+                      />
+                    </div>
                   </div>
-                  <div className='col-sm-9 text-secondary'>
-                    <input
-                      type='password'
-                      className='form-control'
-                      value={newPwd}
-                      onChange={(e) => setNewPwd(e.target.value)}
-                    />
+                  <div className='row '>
+                    <div className='col-sm-4'></div>
+                    <div className='col-sm-8 text-secondary d-flex justify-content-end'>
+                      <button
+                        type='submit'
+                        className='btn btn-primary'
+                        // onClick={handleSubmit}
+                      >
+                        Update Password
+                      </button>
+                    </div>
                   </div>
-                </div>
-                <div className='row mb-3'>
-                  <div className='col-sm-3'>
-                    <h6 className='mb-0'>Re-enter New Password</h6>
-                  </div>
-                  <div className='col-sm-9 text-secondary'>
-                    <input
-                      type='password'
-                      className='form-control'
-                      value={reNewPwd}
-                      onChange={(e) => setReNewPwd(e.target.value)}
-                    />
-                  </div>
-                </div>
-                <div className='row '>
-                  <div className='col-sm-4'></div>
-                  <div className='col-sm-8 text-secondary d-flex justify-content-end'>
-                    <button
-                      type='submit'
-                      className='btn btn-primary'
-                      onClick={handleSubmit}
-                    >
-                      Update Password
-                    </button>
-                  </div>
-                </div>
+                </form>
               </div>
             </div>
           </div>

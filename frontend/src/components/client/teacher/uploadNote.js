@@ -104,7 +104,7 @@ export const UploadNote = () => {
               <div className='mx-5 my-4' style={hr} />
               <div className='mx-5 mt-5'>
                 <form>
-                  <select
+                  {/* <select
                     id='stream'
                     name='stream'
                     className='form-control'
@@ -120,9 +120,20 @@ export const UploadNote = () => {
                         </option>
                       )
                     })}
-                  </select>
+                  </select> */}
+                  <input
+                    type='text'
+                    class='form-control'
+                    required
+                    id='formGroupExampleInput'
+                    disabled
+                    value={userstream}
+                    onChange={(e) => {
+                      setSelectedStream(e.target.value)
+                    }}
+                  />
                   <br />
-                  
+
                   <select
                     id='subject'
                     name='subject'
@@ -141,7 +152,7 @@ export const UploadNote = () => {
                     })}
                   </select>
                   <br />
-                 
+
                   <div className='form-group'>
                     <input
                       type='text'
@@ -156,7 +167,7 @@ export const UploadNote = () => {
                     />
                   </div>
                   <br />
-               
+
                   <div className='form-group'>
                     <select
                       type='number'
