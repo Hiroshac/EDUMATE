@@ -6,8 +6,8 @@ import {
   GetStudentAnswers,
     UpdateStudentAnswers,
   getAnswersbyID,
-  getSubject
-  // getStudentAnswersByStream
+  getSubject,
+  getStudentAnswersByStream
 } from '../controller/Studentanswers.controller.js'
 
 const router = express.Router()

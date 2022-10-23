@@ -33,7 +33,9 @@ export const FeedBack = () => {
       SweatAlert('Please fill the required fields.', 'warning')
     } else {
       axios.post('/subjectfeedback/add', FeedBack)
-      SweatAlert('Successfully insereted', 'success')
+      SweatAlert('Successfully insereted', 'success');
+			window.location.reload();
+
     }
   }
 
@@ -68,6 +70,7 @@ export const FeedBack = () => {
                 class='form-control'
                 value={Comment}
                 onChange={(e) => setComment(e.target.value)}
+                required
               />
             </div>
             <div align='center'>
