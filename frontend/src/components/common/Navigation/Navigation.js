@@ -60,7 +60,6 @@ function Navigation() {
                   <NavDropdown.Item href='examtimetable'>Exam Time Table</NavDropdown.Item>
                   <NavDropdown.Item href='subjecttimetable'>Subject Time Table</NavDropdown.Item>
                 </NavDropdown>
-                <Nav.Link href='/streport'>Report</Nav.Link>
               </Nav>
               <Nav>
                 <Nav.Link href='/profile'>Profile</Nav.Link>

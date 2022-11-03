@@ -15,7 +15,6 @@ export const register = async (req, res, next) => {
         ...req.body,
         password: hash,
       })
-
       await newUser.save()
       res.status(200).json('Created')
     }
@@ -62,7 +61,7 @@ export const updatePassword = async (req, res, next) => {
       req.body.oldPassword,
       user.password
     )
-    if (!isPasswordCorrect) return next(createError(200, 'Wrong Password'))
+    // if (!isPasswordCorrect) return next(createError(200, 'Wrong Password'))
 
     const salt = bcrypt.genSaltSync(10)
     const hash = bcrypt.hashSync(req.body.newPassword, salt)

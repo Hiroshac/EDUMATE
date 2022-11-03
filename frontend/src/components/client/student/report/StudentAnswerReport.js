@@ -94,8 +94,8 @@ export const StudentAnswersReports = () => {
   
   return (
     <div>
-        {/* <AdminNav/> */}
-        <Navigation/>
+        <AdminNav/>
+        {/* <Navigation/> */}
       <br />
       <br />
       <br />

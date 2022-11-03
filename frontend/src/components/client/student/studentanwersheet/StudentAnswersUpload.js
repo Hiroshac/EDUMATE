@@ -3,6 +3,7 @@ import axios from "axios";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { Navbar } from "../Navbar";
 import { AuthContext } from "../../../../context/AuthContext";
+import Swal from 'sweetalert2'
 import Navigation from "../../../common/Navigation/Navigation";
 
 export const StudentAnswersUpload = () => {
@@ -10,6 +11,15 @@ export const StudentAnswersUpload = () => {
     borderLeft: "6px solid ",
     height: "300px",
   };
+
+  async function SweatAlert(text, item) {
+    // await sleep(1000)
+    Swal.fire({
+      icon: item,
+      text: text,
+    })
+  }
+
   const { user } = useContext(AuthContext);
   const userId = user._id;
   console.log(user.stream);
@@ -65,7 +75,7 @@ export const StudentAnswersUpload = () => {
     setTime("");
 
     axios.post("/studentanswers/add", formData).then((res) => {
-      alert("Succsessfully Added");
+      SweatAlert('Successfully insereted', 'success');
       navi("/displayanswers");
     });
   };

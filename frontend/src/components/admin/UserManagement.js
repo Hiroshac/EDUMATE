@@ -26,7 +26,6 @@ function UserManagement() {
         .get(`http://localhost:5000/api/users?q=${searchItem.toLowerCase()}`)
         .then((res) => {
           setData(res.data)
-          console.log('test')
         })
     }
     if (searchItem.length === 0 || searchItem.length > 1) fetchData()
@@ -34,7 +33,13 @@ function UserManagement() {
 
   const deleteProfile = async (id) => {
     await axios.delete(`http://localhost:5000/api/users/${id}`).then((res) => {
-      Swal.fire('Congrats!', 'Successfully Updated', 'error')
+      // Swal.fire('Successful!', 'Successfully Deleted', 'success')
+      Swal.fire({
+        icon: 'success',
+        title: 'Successful',
+        text: 'Successfully Deleted',
+        showConfirmButton: false,
+      })
       window.location.reload()
     })
   }

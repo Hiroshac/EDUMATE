@@ -64,7 +64,13 @@ function AddUser() {
           .post('http://localhost:5000/api/auth/register', obj)
           .then((res) => {
             if (res.data === 'Created') {
-              Swal.fire('Successful!!!', 'Successfully Added', 'success')
+              // Swal.fire('Successful!!!', 'Successfully Added', 'success')
+              Swal.fire({
+                icon: 'success',
+                title: 'Successful!!!',
+                text: 'Successfully Added',
+                showConfirmButton: false,
+              })
               window.location.reload()
             } else if (res.data === 'Exists') {
               Swal.fire({
