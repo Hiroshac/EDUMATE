@@ -9,7 +9,7 @@ function SignIn(props) {
     email: undefined,
     password: undefined,
   })
-  const { loading, error, dispatch } = useContext(AuthContext)
+  const { loading, error, dispatch } = useContext(AuthContext);
 
   const navigate = useNavigate()
 

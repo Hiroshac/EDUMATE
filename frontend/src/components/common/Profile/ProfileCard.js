@@ -18,7 +18,6 @@ export const ProfileCard = (props) => {
               {user.firstName} {user.lastName}
             </h4>
             <h6>{user.stream}</h6>
-            <button className='btn btn-outline-primary'>Message</button>
           </div>
         </div>
       </div>

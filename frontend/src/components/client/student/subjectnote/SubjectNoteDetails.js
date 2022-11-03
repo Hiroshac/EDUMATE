@@ -23,6 +23,7 @@ export const SubjectNoteDetails = () => {
   const [lesson_name, setLesson_name] = useState();
   const [grade, setGrade] = useState();
   const [comment, setComment] = useState();
+  const [data,setData] = useState([]);
 
 
   //get teacher note
@@ -32,6 +33,7 @@ export const SubjectNoteDetails = () => {
       setSubject(res.data.subject);
       setLesson_name(res.data.lesson_name);
       setGrade(res.data.grade);
+	  setData(res.data)
 
 	  //get comment
 	  axios.get(`/comment/get/${id}`).then((res) => {
@@ -75,7 +77,29 @@ export const SubjectNoteDetails = () => {
             />
             <h7>{note}</h7>
           </div>
+
           <div>
+			{/* {data.map((r)=> {
+				return(
+					<form
+              method="get"
+              action={"http://localhost:5000/TeacherNotes/" + r.note}
+            >
+              <button type="submit" className="border-0 bg-transparent">
+                <AiOutlineDownload
+                  style={{
+                    width: "30px",
+                    height: "30px",
+                    marginLeft: "3%",
+                    marginTop: "3%",
+                  }}
+                />
+                Download
+              </button>
+            </form>
+
+				)
+			})} */}
             <form
               method="get"
               action={"http://localhost:5000/TeacherNotes/" + note}

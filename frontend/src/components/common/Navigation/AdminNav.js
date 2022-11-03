@@ -22,6 +22,7 @@ function AdminNav() {
                     <NavDropdown.Item href='/viewuser'>User Details</NavDropdown.Item>
                   </NavDropdown>
                 </Nav>
+
                 <Nav>
                   <Nav.Link eventKey={2} href='/logout'>
                     <button className='btn btn-outline-danger btn-sm'>Logout</button>
@@ -36,11 +37,13 @@ function AdminNav() {
           <Navbar.Toggle aria-controls='responsive-navbar-nav' />
           <Navbar.Collapse id='responsive-navbar-nav'>
             <Nav className='me-auto'>
-              <Nav.Link href='/adminhome'>Home</Nav.Link>
+              <Nav.Link href='/adminhome'>Exam Report</Nav.Link>
               <Nav.Link href='/getsubtime'>Manage Time Tables</Nav.Link>
               <Nav.Link href='/getexam'>Manage Exams</Nav.Link>
               <Nav.Link href='/getsubject'>Manage Subjects</Nav.Link>
               <Nav.Link href='/notereport'>Note Report</Nav.Link>
+              <Nav.Link href='/streport'>Student Answer Report</Nav.Link>
+
               <NavDropdown title='Details' id='collasible-nav-dropdown'>
                 <NavDropdown.Item href='/viewuser'>User Details</NavDropdown.Item>
               </NavDropdown>

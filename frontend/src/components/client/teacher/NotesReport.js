@@ -12,6 +12,7 @@ import {
 } from 'chart.js'
 import { Bar } from 'react-chartjs-2'
 import Navigation from '../../common/Navigation/Navigation'
+import AdminNav from '../../common/Navigation/AdminNav'
 
 export const NotesReport = () => {
   
@@ -102,7 +103,8 @@ export const NotesReport = () => {
   
   return (
     <div>
-      <Navigation />
+      {/* <Navigation /> */}
+      <AdminNav/>
       <br />
       <br />
       <br />

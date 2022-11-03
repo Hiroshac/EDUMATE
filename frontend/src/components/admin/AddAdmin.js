@@ -44,7 +44,13 @@ function AddAdmin() {
           .post('http://localhost:5000/api/auth/register', data)
           .then((res) => {
             if (res.data === 'Created') {
-              Swal.fire('Congrats!', 'Successfully Added', 'success')
+              // Swal.fire('Congrats!', 'Successfully Added', 'success')
+              Swal.fire({
+                icon: 'success',
+                title: 'Successful!!!',
+                text: 'Successfully Added',
+                showConfirmButton: false,
+              })
               window.location.reload()
             } else if (res.data === 'Exists') {
               Swal.fire({

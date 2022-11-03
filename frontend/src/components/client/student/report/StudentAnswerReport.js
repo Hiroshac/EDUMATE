@@ -12,6 +12,7 @@ import {
 } from 'chart.js'
 import { Bar } from 'react-chartjs-2'
 import AdminNav from '../../../common/Navigation/AdminNav'
+import Navigation from '../../../common/Navigation/Navigation'
 
 export const StudentAnswersReports = () => {
   
@@ -58,7 +59,7 @@ export const StudentAnswersReports = () => {
            },
            title: {
              display: true,
-             text: 'Uploaded Note Count',
+             text: 'Uploaded Answer Count',
            },
          },
        }
@@ -94,22 +95,24 @@ export const StudentAnswersReports = () => {
   return (
     <div>
         <AdminNav/>
+        {/* <Navigation/> */}
       <br />
       <br />
       <br />
       <br />
       <br/><br/>
-      <div className='container' >
+      <div className='container text-center' >
         <div className='col-xl-8'>
           <div className='card shadow'>
             <div className='card-header bg-light font-weight-bold text-gray-800 text-center'>
-              NOTE REPORT
+              Answer Summary
             </div>
 
             <Bar options={options} data={data} />
           </div>
         </div>
       </div>
+      <br/>
     </div>
   )
 }
